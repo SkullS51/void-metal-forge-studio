@@ -1,3 +1,4 @@
+pnpm approve-builds
 {
   "name": "@caffeine/template-app",
   "type": "module",
