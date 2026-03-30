@@ -1,12 +1,15 @@
  {
-  "name": "@caffeine/template-app",
+    "name": "gut-punch-core",
+  "version": "1.0.0",
+  "private": false,
   "type": "module",
-  "engines": {
+
     "node": ">=16.0.0",
     "pnpm": ">=7.0.0",
     "npm": "please use pnpm"
   },
   "scripts": {
+    ​"start": "node dist/index.js"
     "build": "pnpm -r --if-present run build",
     "typecheck": "pnpm -r --if-present run typecheck",
     "check": "pnpm -r --if-present run check",
