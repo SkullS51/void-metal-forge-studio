@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  IMAGE_REGISTRY: ghcr.io/skulls51/void-metal-forge-studio
+  IMAGE_NAME: void-metal-forge-studio
+  REGISTRY_USER: skulls51
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Log in to GitHub Container Registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ env.REGISTRY_USER }} --password-stdin
+
+    - name: Build and Tag Docker image
+      run: |
+        docker build . --file Dockerfile --tag ${{ env.IMAGE_REGISTRY }}:latest
+
+    - name: Push to GitHub Container Registry
+      run: |
+        docker push ${{ env.IMAGE_REGISTRY }}:latest
+
