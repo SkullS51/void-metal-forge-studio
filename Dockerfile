@@ -109,8 +109,8 @@ EOF
 # Install Motoko base library
 RUN <<EOF
 set -e
-BASE_LIB_VERSION=SKIP
-BASE_LIB_INSTALL_DIR="$HOME/.motoko/base/$BASE_LIB_VERSION"
+BASE_LIB_VERSION=moc-0.11.0
+ENV MOTOKO_BASE="/home/ubuntu/.motoko/base/moc-0.11.0"
 mkdir -p "$BASE_LIB_INSTALL_DIR"
 BASE_LIB_URL="https://github.com/caffeinelabs/motoko-base/archive/refs/tags/moc-${BASE_LIB_VERSION}.tar.gz"
 SOURCE_SUB_FOLDER="motoko-base-moc-${BASE_LIB_VERSION}/src"
