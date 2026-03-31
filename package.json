@@ -9,11 +9,11 @@
     "npm": "please use pnpm"
   },
   "scripts": {
-    ​"start": "node dist/index.js"
-    "build": "pnpm -r --if-present run build",
-    "typecheck": "pnpm -r --if-present run typecheck",
-    "check": "pnpm -r --if-present run check",
-    "fix": "pnpm -r --if-present run fix"
+  "build": "pnpm -r build",
+  "start": "node dist/index.js",
+  "prestart": "pnpm run build"
+}
+
   },
   "devDependencies": {
     "sharp": "^0.34.4"
