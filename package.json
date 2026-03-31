@@ -1,19 +1,17 @@
- {
-    "name": "gut-punch-core",
+{
+  "name": "gut-punch-core",
   "version": "1.0.0",
   "private": false,
   "type": "module",
-
-    "node": ">=16.0.0",
-    "pnpm": ">=7.0.0",
-    "npm": "please use pnpm"
-  },
+  "node": ">=16.0.0",
+  "pnpm": ">=7.0.0",
+  "npm": "please use pnpm",
   "scripts": {
-  "build": "pnpm -r build",
-  "start": "node dist/index.js",
-  "prestart": "pnpm run build"
-}
-
+    "start": "node dist/index.js",
+    "build": "pnpm -r --if-present run build",
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "check": "pnpm -r --if-present run check",
+    "fix": "pnpm -r --if-present run fix"
   },
   "devDependencies": {
     "sharp": "^0.34.4"
